@@ -46,13 +46,11 @@ print("Action taken")
 # Specify where you are working from
 working_from = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[23]/div[1]/div[2]/div[1]/input")
 working_from.click()
-print("cock")
-
-
-element = WebDriverWait(driver, 10).until(
+# Lets say we are working from office
+hatch_office = WebDriverWait(driver, 10).until(
     EC.visibility_of_element_located((By.XPATH, "//div[text()='Hatch office']"))
 )
-element.click()
+hatch_office.click()
 print("cool bro")
 
 time.sleep(15)  # Just to see the result before quitting
