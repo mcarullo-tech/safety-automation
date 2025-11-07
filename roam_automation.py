@@ -2,8 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
+
 from dictionary import xpath_dict
+from generating_sentences import generate_observation
 
 def load_webpage():
     try:
@@ -39,7 +40,7 @@ def write_in_box(xpath, text):
     exact_location = driver.find_element(By.XPATH, xpath)
     exact_location.send_keys(text)
 
-for _ in range(3):
+for _ in range(1):
 
     driver = webdriver.Edge()
     driver.get('https://ipassm/NetForms/#/new/ROAM-Online')
@@ -75,11 +76,14 @@ for _ in range(3):
     # Lets choose safe
     select_from_dropdown("//div[text()='Safe']")
 
+    # Generate random observation and response
+    observation, action = generate_observation()
+
     # Describe the observation
-    write_in_box(xpath_dict["describe_obs"], "I noticed a spillage on the floor.")
+    write_in_box(xpath_dict["describe_obs"], observation)
  
     # Describe the action you took
-    write_in_box(xpath_dict["action_taken"], "I placed a wet floor sign over the slippage hazard.")
+    write_in_box(xpath_dict["action_taken"], action)
 
     # Choose an observation category
     click_button(xpath_dict["obs_category"])
