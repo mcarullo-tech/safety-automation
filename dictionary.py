@@ -1,0 +1,12 @@
+xpath_dict = {"contractor": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[19]/table/tbody/tr/td[2]/label/input",
+                "home_or_office": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[23]/div[1]/div[2]/div[1]/input",
+                "working_hours": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[24]/table/tbody/tr/td[1]/label/input",
+                "office_location": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[27]/div[1]/div/div[3]/div[1]/input",
+                "exact_location": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[28]/input",
+                "behavior_or_cond": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[39]/div[1]/div[2]/div[1]/input",
+                "safe_or_risk": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[40]/div[1]/div[2]/div[1]/input",
+                "describe_obs": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[43]/input",
+                "action_taken": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[44]/input",
+                "obs_category": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[47]/div[1]/div[2]/div[1]/input",
+                "obs_type": "/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[48]/div[1]/div/div[3]/div[1]/input",
+                "save_obs": "buttonABMgs6hKb6m3zQAAAAAA3otvABVdAhrQPUEvaAjYosttac7t"}

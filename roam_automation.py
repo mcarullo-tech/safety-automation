@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
-import time
+from dictionary import xpath_dict
 
 def load_webpage():
     try:
@@ -45,69 +45,69 @@ driver.get('https://ipassm/NetForms/#/new/ROAM-Online')
 load_webpage()
 
 # Specify safety observation was NOT observed by a contractor because we dont snitch
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[19]/table/tbody/tr/td[2]/label/input")
+click_button(xpath_dict["contractor"])
 print("Observation was not observed by contractor")
 
 # Specify where you are working from
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[23]/div[1]/div[2]/div[1]/input")
+click_button(xpath_dict["home_or_office"])
 # Lets say we are working from office
 select_from_dropdown("//div[text()='Hatch office']")
 
 print("Working from office")
 
 # Specify observation occured during working hours
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[24]/table/tbody/tr/td[1]/label/input")
+click_button(xpath_dict["working_hours"])
 print("Observation during working hours")
 
 # Specify at which office the incident occured
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[27]/div[1]/div/div[3]/div[1]/input")
+click_button(xpath_dict["office_location"])
 # Lets just choose the Amherst office
 select_from_dropdown("//div[text()='100 Sylvan Parkway, Amherst']")
 
 print("Amherst Office")
 
 # Specify the location of your observation
-write_in_box("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[28]/input", "Third floor")
+write_in_box(xpath_dict["exact_location"], "Third floor")
 print("Exact location specified")
 
 # Choose either behavior or condition
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[39]/div[1]/div[2]/div[1]/input")
+click_button(xpath_dict["behavior_or_cond"])
 # Lets choose behavior
 select_from_dropdown("//div[text()='Behaviour']")
 
 print("Observation is related to a behavior")
 
 # Specify safe or at risk
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[40]/div[1]/div[2]/div[1]/input")
+click_button(xpath_dict["safe_or_risk"])
 # Lets choose safe
 select_from_dropdown("//div[text()='Safe']")
 
 print("Observation is safe")
 
 # Describe the observation
-write_in_box("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[43]/input", "I noticed a spillage on the floor.")
+write_in_box(xpath_dict["describe_obs"], "I noticed a spillage on the floor.")
 print("Observation described")
 
 # Describe the action you took
-write_in_box("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[44]/input", "I placed a wet floor sign over the slippage hazard.")
+write_in_box(xpath_dict["action_taken"], "I placed a wet floor sign over the slippage hazard.")
 print("Action taken")
 
 # Choose an observation category
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[47]/div[1]/div[2]/div[1]/input")
+click_button(xpath_dict["obs_category"])
 # Lets assume it was an access breach
 select_from_dropdown("//div[text()='Access Breach']")
 
 print("Access breach detected")
 
 # Choose an observation type (Green, Yellow, Orange Card)
-click_button("/html/body/div[1]/div[4]/div[1]/div[4]/div[1]/div/div[2]/form/div[3]/div/div[2]/div/div[48]/div[1]/div/div[3]/div[1]/input")
+click_button(xpath_dict["obs_type"])
 # Lets assume green card
 select_from_dropdown("//div[text()='VFL- Office Safety Audit Card, Green Card']")
 
 print("Green card")
 
 # Save the ROAM
-save_observation = driver.find_element(By.ID, "buttonABMgs6hKb6m3zQAAAAAA3otvABVdAhrQPUEvaAjYosttac7t")
+save_observation = driver.find_element(By.ID, xpath_dict["save_obs"])
 save_observation.click()
 print("Observation saved!")
 
