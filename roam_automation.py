@@ -18,7 +18,7 @@ def load_webpage():
         driver.switch_to.frame(iframe)
 
         # Wait for the header to load inside the iframe
-        element = WebDriverWait(driver, 20).until(
+        WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.XPATH, "//div[@class='panelHeader']"))
         )
         print("Page loaded successfully inside iframe!")
