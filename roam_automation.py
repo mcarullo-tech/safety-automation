@@ -31,7 +31,7 @@ def click_button(xpath):
     button.click()
 
 def select_from_dropdown(xpath):
-    selection = WebDriverWait(driver, 10).until(
+    selection = WebDriverWait(driver, 5).until(
         EC.visibility_of_element_located((By.XPATH, xpath))
     )
     selection.click()
@@ -46,6 +46,10 @@ for _ in range(1):
     driver.get('https://ipassm/NetForms/#/new/ROAM-Online')
 
     load_webpage()
+
+    # Generate random observation and response
+    location, observation, action = generate_observation()
+
 
     # Specify safety observation was NOT observed by a contractor because we dont snitch
     click_button(xpath_dict["contractor"])
@@ -64,7 +68,7 @@ for _ in range(1):
     select_from_dropdown("//div[text()='100 Sylvan Parkway, Amherst']")
 
     # Specify the location of your observation
-    write_in_box(xpath_dict["exact_location"], "Third floor")
+    write_in_box(xpath_dict["exact_location"], location.capitalize())
 
     # Choose either behavior or condition
     click_button(xpath_dict["behavior_or_cond"])
@@ -75,9 +79,6 @@ for _ in range(1):
     click_button(xpath_dict["safe_or_risk"])
     # Lets choose safe
     select_from_dropdown("//div[text()='Safe']")
-
-    # Generate random observation and response
-    observation, action = generate_observation()
 
     # Describe the observation
     write_in_box(xpath_dict["describe_obs"], observation)
