@@ -1,20 +1,33 @@
-How does one measure the strength of an engineer? Some may refer to one's technical ability: highly proficient in engineering software programs such as CAD/CAM, 
-skilled in many programming languages, and overall strong grasp of engineering fundamentals. Others may take a more holistic approach: considering the engineer's
-ability to think critically about a problem, ask intelligent questions, and deliver solutions which send their clients into a mad frenzy of ecstasy.
+# Project Overview
 
-My current company has adopted another approach: measuring the number of ROAM observations one submits. The ROAM observation is a web form which engineers are
-highly encouraged to fill out at least once weekly. The engineer is to describe an unsafe incident they witnessed and record their mitigation strategy against it.
+At my company, one of the performance metrics involves logging weekly safety observations—called **ROAM Observations**. Employees submit these through a simple web form, describing any safety concerns they noticed and the actions taken to address them.
 
-On the surface, it seems like a simple way to keep engineers proactive about their own safety. However, the reality is much more sinister. You see, the number of ROAM
-observations one submits is directly related to the bonus one receives at the end of the fiscal year. If two candidates apply for the same promotion, all else being equal,
-he who has submitted more ROAM observations will be selected. Even if the other candidate has stronger technical abilities, he who has submitted more ROAMS shall
-be looked upon more favorably.
+The process was repetitive and time‑consuming, so I built a tool to automate it.
 
-So you see, the ROAM observation is about more than safety. It is about POWER. It is a tool by which our corporate overlords can measure our obedience; to quantiy how 
-willing we are to bend the knee to their will, regardless of what we see to be right and just. The ROAM observation is a vehicle by which the proletariat remains oppressed
-by limiting his ability to exercise free-will and critical thinking.
+(Insert screenshots)
 
-While the outlook may look bleak, there is still a glimmer of hope. This tool has been created to fully automate the ROAM process. It has been created to help
-the proletariate rise up against our corporate oppressors and take what is rightfully ours. It is much more than a simple automation tool.
+---
 
-It is a ticket to freedom.
+## How It’s Made
+
+### Tech Stack
+**Python**, **Tkinter**, **Selenium WebDriver**
+
+### How It Works
+The program fills out ROAM observations exactly as a human would:
+
+- Loads the ROAM web form using Selenium  
+- Generates randomized ad‑lib style safety observations  
+  - Example: “I observed a/an *[noun]* *[verb]*‑ing by the *[location]*.”
+  - Nouns, verbs, and locations are pulled from predefined lists to create many unique combinations  
+- Generates corresponding “actions taken” in the same style  
+- Uses a Tkinter GUI where the user selects how many observations to submit  
+- Displays progress through a simple progress bar
+
+---
+
+## Outcome
+
+My company awards a $20 gift card each quarter to the person who logs the most ROAM observations. I won twice.
+
+Eventually, I was asked to retire the tool for “undermining the safety intent” of the initiative - but it was a fun project and a great exercise in automation, UI design, and creative text generation.
